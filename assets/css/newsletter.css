@@ -146,6 +146,14 @@ html {
 	}
 }
 
+/* Keep the touch scroll area aligned with Safari's visible viewport. */
+@supports (height: 100dvh) {
+	html.is-touch,
+	html.is-touch #wrapper {
+		height: 100dvh;
+	}
+}
+
 /* The original template hides this container on small screens. */
 @media screen and (max-width: 736px) {
 	#header {
@@ -155,7 +163,7 @@ html {
 		align-items: center;
 		height: auto;
 		min-height: 100vh;
-		min-height: 100svh;
+		min-height: 100dvh;
 		padding: 2em 0;
 		gap: 1.5em;
 	}
