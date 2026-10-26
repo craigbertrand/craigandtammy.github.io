@@ -255,7 +255,8 @@ html {
 
 @media screen and (max-width: 736px) {
 	#header .header-portrait {
-		width: clamp(6em, 24vw, 9em);
+		width: clamp(12em, 48vw, 18em);
+		max-width: 80vw;
 		height: auto;
 		aspect-ratio: 1;
 		margin-bottom: 1.25em;
