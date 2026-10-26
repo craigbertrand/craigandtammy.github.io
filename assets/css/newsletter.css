@@ -1,0 +1,313 @@
+/* Zoho newsletter form: use the Highlights template's fields and buttons. */
+#crmWebToEntityForm {
+	width: 100%;
+	text-align: left;
+}
+
+#crmWebToEntityForm form {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5em;
+}
+
+#crmWebToEntityForm .zcwf_title {
+	grid-column: 1 / -1;
+	text-align: center;
+	margin: 0 0 0.5em;
+}
+
+#crmWebToEntityForm .zcwf_row {
+	min-width: 0;
+}
+
+#crmWebToEntityForm label {
+	margin-bottom: 0.6em;
+	font-size: 0.8em;
+}
+
+#crmWebToEntityForm .zcwf_col_help:empty {
+	display: none;
+}
+
+#crmWebToEntityForm .zcwf_row:last-of-type {
+	grid-column: 1 / -1;
+	margin-top: 0.5em;
+}
+
+#crmWebToEntityForm .zcwf_row:last-of-type .zcwf_col_fld {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1em;
+}
+
+@media screen and (max-width: 480px) {
+	#crmWebToEntityForm form {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 1.25em;
+	}
+}
+
+/* Keep the main calls to action together at every screen size. */
+#header .container .header-actions {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 1em;
+	margin-left: 0;
+}
+
+#header .container .header-actions li {
+	padding: 0;
+	margin: 0;
+	width: auto;
+	min-width: 0;
+}
+
+#header .container .header-actions .button {
+	padding: 0 1.5em;
+	width: auto;
+}
+
+#header .container .button.support {
+	background-color: #61686b;
+	box-shadow: none;
+	color: #fff !important;
+}
+
+#header .container .button.support:hover {
+	background-color: #6f7577;
+}
+
+#header .container .button.support:active {
+	background-color: #51585b;
+}
+
+@media screen and (max-width: 480px) {
+	#header .container .header-actions {
+		gap: 0.75em;
+	}
+
+	#header .container .header-actions .button {
+		padding: 0 1em;
+		font-size: 0.8em;
+	}
+}
+
+/* Personal social profiles alongside the podcast invitation. */
+.social-profiles {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 2em;
+	margin: 2em 0;
+}
+
+.social-profiles .icons li {
+	padding-right: 1em;
+}
+
+@media screen and (max-width: 480px) {
+	.social-profiles {
+		grid-template-columns: 1fr;
+		gap: 1em;
+	}
+}
+
+
+/* Apply the same dark overlay to the shared background and section photos. */
+html {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/overlay.png"), url("../../images/bg.jpg");
+	background-attachment: fixed, fixed, fixed;
+	background-position: center, top left, center center;
+	background-repeat: no-repeat, repeat, no-repeat;
+	background-size: cover, auto, cover;
+}
+
+.main-bg::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background: rgba(0, 0, 0, 0.4);
+	pointer-events: none;
+}
+
+/* Stack the landing calls to action on phones. */
+@media screen and (max-width: 736px) {
+	#header .container .header-actions {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.75em;
+	}
+
+	#header .container .header-actions .button {
+		display: block;
+		width: 100%;
+		min-width: 0;
+	}
+}
+
+/* The original template hides this container on small screens. */
+@media screen and (max-width: 736px) {
+	#header {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: auto;
+		min-height: 100vh;
+		min-height: 100svh;
+		padding: 2em 0;
+		gap: 1.5em;
+	}
+
+	#header:after {
+		display: none;
+	}
+
+	#header header {
+		padding-bottom: 0;
+		margin: 0;
+	}
+
+	#header .container {
+		display: block;
+		position: relative;
+		left: auto;
+		bottom: auto;
+		margin: 0;
+		width: 80%;
+		max-width: 22em;
+		padding: 0;
+	}
+}
+
+/* Give newsletter actions comfortable, equal sizing on phones. */
+@media screen and (max-width: 736px) {
+	#crmWebToEntityForm .zcwf_row:last-of-type .zcwf_col_fld {
+		flex-direction: column;
+		align-items: stretch;
+		gap: 0.75em;
+	}
+
+	#crmWebToEntityForm .zcwf_button {
+		-webkit-appearance: none;
+		appearance: none;
+		display: block;
+		width: 100%;
+		min-width: 0;
+		max-width: none;
+		min-height: 3em;
+		margin: 0;
+		padding: 0 1.5em;
+		font-size: 1em;
+		text-align: center;
+	}
+}
+
+/* Let the landing buttons float over the background photograph. */
+#header .container {
+	background: transparent;
+}
+
+/* Compact, matching landing buttons on phones. */
+@media screen and (max-width: 736px) {
+	#header .container .header-actions {
+		align-items: center;
+	}
+
+	#header .container .header-actions .button {
+		width: auto;
+		min-width: 11em;
+		padding: 0 1.5em;
+		border-radius: 0.6em;
+		background-color: #0066cc;
+		box-shadow: none;
+		color: #fff !important;
+	}
+
+	#header .container .header-actions .button:hover {
+		background-color: #1975d1;
+	}
+
+	#header .container .header-actions .button:active {
+		background-color: #0057ad;
+	}
+}
+
+/* Circular portrait above the landing title. */
+#header .header-portrait {
+	display: block;
+	width: 11em;
+	height: 11em;
+	object-fit: cover;
+	object-position: center;
+	border-radius: 50%;
+	margin: 0 auto 1.5em;
+}
+
+@media screen and (max-width: 736px) {
+	#header .header-portrait {
+		width: clamp(6em, 24vw, 9em);
+		height: auto;
+		aspect-ratio: 1;
+		margin-bottom: 1.25em;
+	}
+}
+
+#header .header-portrait {
+	border: 3px solid #fff;
+}
+
+/* Phone and tablet section imagery: only show the partner airport photograph. */
+#two .partner-mobile-image {
+	display: block;
+	margin: 0 0 2em;
+}
+
+@media screen and (max-width: 980px) {
+	.main .image.primary,
+	.main-bg {
+		display: none;
+	}
+
+	#two .partner-mobile-image {
+		display: block;
+		margin: 0 0 2em;
+	}
+}
+
+/* The partner photo sits above the text without the template's tall spacer. */
+#two .container:before {
+	display: none;
+}
+
+#two .container .content {
+	display: block;
+	width: 100%;
+	margin-right: 0;
+}
+
+/* Center the embedded donation form within the partner section. */
+#two dbox-widget {
+	display: block;
+	width: 100%;
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#two dbox-widget iframe {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 100%;
+}
+
+/* Bring the Connect content closer to the top of its section. */
+#three .container {
+	padding-top: 2em;
+}
+
+#three .container:before {
+	display: none;
+}
