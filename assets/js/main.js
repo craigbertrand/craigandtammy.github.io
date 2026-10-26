@@ -51,7 +51,10 @@
 					$('.scrolly').scrolly({
 						speed: 1500,
 						parent: $wrapper,
-						pollOnce: true
+						// Recalculate after embedded forms resize, in wrapper coordinates.
+						offset: function() {
+							return $wrapper.offset().top - $wrapper.scrollTop();
+						}
 					});
 
 					$window.off('load.hl_scrolly');
