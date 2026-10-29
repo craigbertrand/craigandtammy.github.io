@@ -52,12 +52,14 @@
 #header .container .header-actions {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	justify-content: center;
 	gap: 1em;
 	margin-left: 0;
 }
 
 #header .container .header-actions li {
+	flex: 0 0 auto;
 	padding: 0;
 	margin: 0;
 	width: auto;
@@ -319,4 +321,50 @@ html {
 
 #three .container:before {
 	display: none;
+}
+
+/* Prayer circle invitation below the social profiles. */
+#three .prayer-circle {
+	margin: 2.5em auto 0;
+	padding-top: 2em;
+	border-top: 1px solid #dddddd;
+}
+
+#three .prayer-circle-code {
+	display: block;
+	width: 100%;
+	max-width: 17em;
+	height: auto;
+	margin: 0 auto 1.25em;
+}
+
+#three .prayer-circle-instructions {
+	font-size: 0.9em;
+}
+
+/* WhatsApp prayer circle call to action on desktop and mobile. */
+#header .container .header-actions .button.pray {
+	background-color: #25d366;
+	border: 0;
+	box-shadow: none;
+	color: #103b24 !important;
+}
+
+#header .container .header-actions .button.pray:hover {
+	background-color: #4bdd81;
+}
+
+#header .container .header-actions .button.pray:active {
+	background-color: #20bd5a;
+}
+
+/* Give three landing actions room on larger screens. */
+@media screen and (min-width: 737px) {
+	#header .container {
+		width: calc(100% - 2em);
+		max-width: 48em;
+		margin-left: 0;
+		padding: 2.5em 1em;
+		transform: translateX(-50%);
+	}
 }
